@@ -17,8 +17,10 @@ namespace WPF_BookShelf
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            MainWindowViewModel studentsViewModel = new MainWindowViewModel(BooksModel);
-            WindowService.Show(studentsViewModel);
+            MainWindowViewModel books1 = new MainWindowViewModel(BooksModel);
+            WindowService.Show(books1);
+            MainWindowViewModel books2 = new MainWindowViewModel(BooksModel);
+            WindowService.Show(books2);
         }
     }
 }

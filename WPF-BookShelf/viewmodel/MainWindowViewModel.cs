@@ -96,6 +96,10 @@ namespace WPF_BookShelf
                     else
                         BooksViewSource.View.Filter = FilterAfterFunc;
                 }
+                else
+                {
+                    BooksViewSource.View.Filter = null;
+                }
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BooksViewSource.View"));
             }
         }
@@ -117,7 +121,9 @@ namespace WPF_BookShelf
                         BooksViewSource.View.Filter = FilterAfterFunc;
                 }
                 else
+                {
                     BooksViewSource.View.Filter = null;
+                }
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BooksViewSource.View"));
             }
         }
@@ -126,6 +132,7 @@ namespace WPF_BookShelf
 
         public MainWindowViewModel(BooksMgmt model_arg)
         {
+            filterActive = false;
             model = model_arg;
             AddCommand = new AddCommand();
             DeleteCommand = new DeleteCommand();
