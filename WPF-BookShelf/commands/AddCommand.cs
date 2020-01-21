@@ -18,7 +18,7 @@ namespace WPF_BookShelf
         public void Execute(object parameter)
         {
             MainWindowViewModel viewModel = (MainWindowViewModel)parameter;
-            viewModel.Model.AddBook();
+            viewModel.BooksModel.AddBook();
         }
     }
 }

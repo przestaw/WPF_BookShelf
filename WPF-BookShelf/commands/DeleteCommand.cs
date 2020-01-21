@@ -18,7 +18,7 @@ namespace WPF_BookShelf
         public void Execute(object parameter)
         {
             MainWindowViewModel viewModel = (MainWindowViewModel)parameter;
-            viewModel.Model.DeleteBook(viewModel.SelectedBook);
+            viewModel.BooksModel.DeleteBook(viewModel.SelectedBook);
         }
     }
 }

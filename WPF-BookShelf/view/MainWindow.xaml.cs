@@ -17,14 +17,11 @@ namespace WPF_BookShelf
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : UserControl
     {
-        private MainWindowViewModel vm = new MainWindowViewModel();
         public MainWindow()
         {
-            this.DataContext = vm;
             InitializeComponent();
-            
         }
     }
 }

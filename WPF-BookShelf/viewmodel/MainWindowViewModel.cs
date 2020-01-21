@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace WPF_BookShelf
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : INotifyPropertyChanged, IViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private int filter;
@@ -19,7 +19,7 @@ namespace WPF_BookShelf
         private BooksMgmt model;
         private Book selectedBook;
 
-        public BooksMgmt Model { get { return model; } }
+        public BooksMgmt BooksModel { get { return model; } }
 
         public AddCommand AddCommand { get; }
 
@@ -121,10 +121,12 @@ namespace WPF_BookShelf
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BooksViewSource.View"));
             }
         }
-        
-        public MainWindowViewModel()
+
+        public Action Close { get; set; }
+
+        public MainWindowViewModel(BooksMgmt model_arg)
         {
-            model = new Model();
+            model = model_arg;
             AddCommand = new AddCommand();
             DeleteCommand = new DeleteCommand();
             NextCategoryCommand = new NextCategoryCommand();

@@ -15,7 +15,14 @@ namespace WPF_BookShelf
             long number;
             try
             {
-                number = Int64.Parse(value.ToString());
+                if (value != null)
+                {
+                    number = Int64.Parse(value.ToString());
+                } 
+                else
+                {
+                    return new ValidationResult(false, "ISBN not valid, must be a number");
+                }
             }
             catch (FormatException)
             {

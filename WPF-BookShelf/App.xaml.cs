@@ -12,5 +12,13 @@ namespace WPF_BookShelf
     /// </summary>
     public partial class App : Application
     {
+        public IWindowService WindowService { get; } = new WindowService();
+        private Model BooksModel { get; } = new Model();
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            MainWindowViewModel studentsViewModel = new MainWindowViewModel(BooksModel);
+            WindowService.Show(studentsViewModel);
+        }
     }
 }

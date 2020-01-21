@@ -18,7 +18,7 @@ namespace WPF_BookShelf
         public void Execute(object parameter)
         {
             MainWindowViewModel viewModel = (MainWindowViewModel)parameter;
-            viewModel.Model.NextCategory(viewModel.SelectedBook);
+            viewModel.BooksModel.NextCategory(viewModel.SelectedBook);
         }
     }
 }
