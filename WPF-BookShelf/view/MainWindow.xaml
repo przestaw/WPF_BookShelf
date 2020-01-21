@@ -7,9 +7,6 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="BookShelf Manager" Height="600" Width="1000">
-    <Window.DataContext>
-        <vm:MainWindowViewModel/>
-    </Window.DataContext>
     <Window.Resources>
         <vm:BoolToVisibilityConverter x:Key="boolToVisConverter"/>
         <vm:CategoryToImageConverter x:Key="catToImgConverter"/>

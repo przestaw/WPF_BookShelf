@@ -19,9 +19,12 @@ namespace WPF_BookShelf
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowViewModel vm = new MainWindowViewModel();
         public MainWindow()
         {
+            this.DataContext = vm;
             InitializeComponent();
+            
         }
     }
 }
