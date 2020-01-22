@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="commands\RelayCommand.cs" />
     <Compile Include="window\WindowService.cs" />
     <Compile Include="window\IViewModel.cs" />
     <Compile Include="window\IWindowService.cs" />

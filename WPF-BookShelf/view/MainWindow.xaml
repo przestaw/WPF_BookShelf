@@ -41,7 +41,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button x:Name="addButton" Grid.Column="0" Content="Add" Width="60" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3" Command="{Binding Path=AddCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}"/>
-                <Button x:Name="deleteButton" Grid.Column="1" Content="Delete" Width="65" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3" Command="{Binding Path=DeleteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" Visibility="{Binding Path=SelectedBook, Converter={StaticResource boolToVisConverter}}"/>
+                <Button x:Name="deleteButton" Grid.Column="1" Content="Delete" Width="65" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="3" Command="{Binding Path=DeleteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}" />
             </Grid>
         </Grid>
 

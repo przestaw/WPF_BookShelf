@@ -21,11 +21,15 @@ namespace WPF_BookShelf
 
         public BooksMgmt BooksModel { get { return model; } }
 
-        public AddCommand AddCommand { get; }
+        //public AddCommand AddCommand { get; }
+        private RelayCommand<object> addCommand;
+        public RelayCommand<object> AddCommand => (addCommand = addCommand ?? new RelayCommand<object>(o => BooksModel.AddBook()));
 
-        public DeleteCommand DeleteCommand { get; }
+        private RelayCommand<object> deleteCommand;
+        public RelayCommand<object> DeleteCommand => (deleteCommand = deleteCommand ?? new RelayCommand<object>(o => BooksModel.DeleteBook(SelectedBook), o => SelectedBook != null));
 
-        public NextCategoryCommand NextCategoryCommand { get; }
+        private RelayCommand<object> nextCategoryCommand;
+        public RelayCommand<object> NextCategoryCommand => (deleteCommand = deleteCommand ?? new RelayCommand<object>(o => BooksModel.NextCategory(SelectedBook), o => SelectedBook != null));
         
         private bool FilterBeforeFunc(object o)
         {
@@ -64,6 +68,8 @@ namespace WPF_BookShelf
             set
             {
                 selectedBook = value;
+                NextCategoryCommand.NotifyCanExecuteChanged();
+                DeleteCommand.NotifyCanExecuteChanged();
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SelectedBook"));
             }
         }
@@ -134,9 +140,9 @@ namespace WPF_BookShelf
         {
             filterActive = false;
             model = model_arg;
-            AddCommand = new AddCommand();
-            DeleteCommand = new DeleteCommand();
-            NextCategoryCommand = new NextCategoryCommand();
+            //AddCommand = new AddCommand();
+            //DeleteCommand = new DeleteCommand();
+            //NextCategoryCommand = new NextCategoryCommand();
             BooksViewSource = new CollectionViewSource
             {
                 Source = model.GetBooks()
