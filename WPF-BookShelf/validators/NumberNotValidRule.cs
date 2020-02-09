@@ -38,7 +38,6 @@ namespace WPF_BookShelf
             if (digits != 13 && digits != 10)
                 return new ValidationResult(false, "ISBN must contain 13 or 10 digits");
 
-
             return ValidationResult.ValidResult;
         }
     }

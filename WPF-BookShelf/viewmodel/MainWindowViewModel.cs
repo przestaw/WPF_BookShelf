@@ -29,7 +29,7 @@ namespace WPF_BookShelf
         public RelayCommand<object> DeleteCommand => (deleteCommand = deleteCommand ?? new RelayCommand<object>(o => BooksModel.DeleteBook(SelectedBook), o => SelectedBook != null));
 
         private RelayCommand<object> nextCategoryCommand;
-        public RelayCommand<object> NextCategoryCommand => (deleteCommand = deleteCommand ?? new RelayCommand<object>(o => BooksModel.NextCategory(SelectedBook), o => SelectedBook != null));
+        public RelayCommand<object> NextCategoryCommand => (nextCategoryCommand = nextCategoryCommand ?? new RelayCommand<object>(o => BooksModel.NextCategory(SelectedBook), o => SelectedBook != null));
         
         private bool FilterBeforeFunc(object o)
         {

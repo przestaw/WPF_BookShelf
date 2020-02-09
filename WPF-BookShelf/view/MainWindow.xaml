@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:WPF_BookShelf"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Height="550" Width="800">
+        Height="500" Width="800">
     <UserControl.Resources>
         <vm:BoolToVisibilityConverter x:Key="boolToVisConverter"/>
         <vm:CategoryToImageConverter x:Key="catToImgConverter"/>
@@ -68,8 +68,10 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" MaxHeight="40"/>
                         <RowDefinition Height="*" MaxHeight="60"/>
-                        <RowDefinition Height="6*" MaxHeight="250"/> <!-- Spacer-->
-                        <RowDefinition Height="*" /> <!-- Spacer-->
+                        <RowDefinition Height="6*" MaxHeight="250"/>
+                        <!-- Spacer-->
+                        <RowDefinition Height="*" />
+                        <!-- Spacer-->
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*" />
@@ -85,7 +87,7 @@
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
-                    
+
                     <Label Content="Filter year :" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     <Label Content="Options :" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                     <!-- Filter options-->
@@ -100,7 +102,8 @@
                         <ColumnDefinition Width="5*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" MaxHeight="100"/> <!-- Spacer-->
+                        <RowDefinition Height="2*" MaxHeight="100"/>
+                        <!-- Spacer-->
                         <RowDefinition Height="*" MaxHeight="50"/>
                         <RowDefinition Height="*" MaxHeight="50"/>
                         <RowDefinition Height="*" MaxHeight="50"/>
@@ -133,6 +136,5 @@
                 </Grid>
             </Grid>
         </Grid>
-
     </Grid>
 </UserControl>

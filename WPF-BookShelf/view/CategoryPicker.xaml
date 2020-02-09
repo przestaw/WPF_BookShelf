@@ -10,7 +10,7 @@
         <Button Command="{Binding Path=NextCategoryCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=DataContext}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Image Source="{Binding ElementName=catPicker, Path=ImageSource}" Grid.Column="0" HorizontalAlignment="Center"/>
